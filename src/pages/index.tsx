@@ -1,3 +1,31 @@
+import styles from '../styles/pages/home.module.scss';
+
+import Head from 'next/head';
+import { Fragment } from 'react';
+import { SubscribeButton } from '../components/SubscribeButton';
+
 export default function Home() {
-  return <h1>Hello World</h1>;
+  return (
+    <Fragment>
+      <Head>
+        <title>Home | ig.news</title>
+      </Head>
+
+      <main className={styles.contentContainer}>
+        <section className={styles.hero}>
+          <span>👏 Hey Helcome</span>
+          <h1>
+            News about <br /> the
+            <span> React</span> world.
+          </h1>
+          <p>
+            Get access to all the publications <br />
+            <span>for $9.90 month</span>
+          </p>
+          <SubscribeButton />
+        </section>
+        <img src="/assets/images/avatar.svg" alt="Girl coding" />
+      </main>
+    </Fragment>
+  );
 }
